@@ -135,7 +135,7 @@ export function Contact() {
       </div>
       {status === 'success' ? (
         <div className="contact-success" role="status" aria-live="polite">
-          <p className="contact-success-title">{copy.success}</p>
+          <h3 className="contact-success-title">{copy.success}</h3>
           <p>{copy.successBody}</p>
         </div>
       ) : (
