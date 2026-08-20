@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+
+  /*
+   * Semantic theme tokens. Change these to reskin a client.
+   * Colors are full CSS color values (this template uses custom CSS, not Tailwind color utilities).
+   */
+  --color-background: #f8f6f0;
+  --color-surface: #f8f6f0;
+  --color-text: #171717;
+  --color-text-muted: rgba(23, 23, 23, 0.6);
+  --color-accent: #ef4e4e;
+  --color-accent-contrast: #f8f6f0;
+  --color-border: #171717;
+  --color-link: #171717;
+  --color-tag: #f8f6f0;
+
+  /* Folio color-block palette (hero / section planes) */
+  --color-block-warm: #ef4e4e;
+  --color-block-cool: #267f80;
+  --color-block-soft: #efbb7d;
+
+  /* Overlay / line helpers */
+  --color-overlay: rgba(23, 23, 23, 0.18);
+  --color-overlay-strong: rgba(23, 23, 23, 0.22);
+  --color-line: rgba(23, 23, 23, 0.32);
+  --color-line-soft: rgba(248, 246, 240, 0.5);
+
+  /* Typography */
+  --font-display: 'DM Serif Display', serif;
+  --font-sans: 'Manrope', sans-serif;
+
+  /* Layout */
+  --header-height: 82px;
+  --header-height-mobile: 68px;
+  --max-width-prose: 340px;
+
+  /* Motion */
+  --ease-standard: ease;
+  --duration-fast: 0.2s;
+}

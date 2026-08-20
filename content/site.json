@@ -1,0 +1,73 @@
+{
+  "name": "Dylan Mercer",
+  "firstName": "Dylan",
+  "lastName": "Mercer",
+  "initials": "DM",
+  "tagline": "Stand-up comedian",
+  "email": "",
+  "copyrightYear": 2025,
+  "seo": {
+    "title": "Dylan Mercer — Stand-Up Comedian",
+    "description": "Dylan Mercer is a stand-up comedian and writer based in New York. Tour dates, videos, and booking."
+  },
+  "images": {
+    "headshot": {
+      "src": "/uploads/headshots/hero.jpg",
+      "alt": "Dylan Mercer holding a microphone on stage"
+    },
+    "about": {
+      "src": "/uploads/headshots/about.jpg",
+      "alt": "Dylan Mercer performing under a spotlight"
+    },
+    "og": "/uploads/headshots/og.jpg"
+  },
+  "social": {
+    "instagram": "https://instagram.com/",
+    "facebook": "https://facebook.com/",
+    "x": "https://x.com/",
+    "threads": "https://threads.net/",
+    "youtube": "https://youtube.com/",
+    "tiktok": "https://tiktok.com/"
+  },
+  "nav": ["About", "Shows", "Videos", "Contact"],
+  "sections": {
+    "hero": {
+      "eyebrow": "Live on stage",
+      "verticalLabel": "STAND-UP COMEDIAN ● NEW YORK / EVERYWHERE",
+      "intro": "A stand-up comedian and writer based in New York. Currently touring a new hour.",
+      "portraitCaption": "PHOTO / LIVE FROM BROOKLYN",
+      "corner": "01 / 04"
+    },
+    "about": {
+      "marker": "ABOUT",
+      "eyebrow": "The short version",
+      "headline": "A clear\n*point of view.*",
+      "photoCaption": "ON STAGE / 2024",
+      "stamp": "EST. 2016"
+    },
+    "shows": {
+      "eyebrow": "On the road",
+      "headline": "Upcoming\n*shows.*",
+      "note": "Dates, places, and a reason to leave the house.",
+      "moreDates": "More dates coming soon",
+      "defaultDetail": "General admission",
+      "ticketsLabel": "Tickets"
+    },
+    "videos": {
+      "eyebrow": "Watch & listen",
+      "headline": "Selected\n*work.*",
+      "previewLabel": "Preview selected · full video coming soon"
+    },
+    "contact": {
+      "sideLabel": "CONTACT",
+      "eyebrow": "For notes, press, or just hello",
+      "headline": "Stay\n*in touch.*",
+      "blurb": "For bookings and general inquiries, send a message below.",
+      "success": "Message sent",
+      "submitLabel": "Send message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "you@example.com",
+      "messagePlaceholder": "Write a message"
+    }
+  }
+}

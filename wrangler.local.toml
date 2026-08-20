@@ -1,0 +1,11 @@
+# Local Pages Functions development reference only.
+# Current Wrangler does not accept `--config` for `wrangler pages dev`.
+# `npm run pages:dev` passes `dist` + `--compatibility-date` on the CLI and loads
+# `.dev.vars` from the repo root. Keep this file for the golden template’s local
+# identity — do NOT rename it to wrangler.toml / wrangler.json (Pages Git deploys
+# auto-detect those and lock production env vars to Wrangler-managed config).
+# Do NOT set pages_build_output_dir.
+# `name` is this golden template’s internal local-dev identifier only — not a
+# production Cloudflare project name or client-facing value.
+name = "comedian-template-folio"
+compatibility_date = "2024-11-01"

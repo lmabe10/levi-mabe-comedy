@@ -1,0 +1,409 @@
+media:
+  - name: images
+    label: Images
+    input: public/uploads
+    output: /uploads
+    rename: safe
+    categories: [image]
+
+content:
+  - name: site
+    label: Site Settings
+    type: file
+    path: content/site.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: name
+        label: Performer Name
+        type: string
+        required: true
+
+      - name: firstName
+        label: First Name
+        type: string
+        required: true
+
+      - name: lastName
+        label: Last Name
+        type: string
+        required: true
+
+      - name: initials
+        label: Initials
+        type: string
+        required: true
+        description: Shown in the header and footer wordmark.
+
+      - name: tagline
+        label: Tagline
+        type: string
+
+      - name: copyrightYear
+        label: Copyright Year
+        type: number
+        required: true
+
+      - name: seo
+        label: SEO
+        type: object
+        fields:
+          - name: title
+            label: Page Title
+            type: string
+            required: true
+
+          - name: description
+            label: Meta Description
+            type: text
+            required: true
+
+      - name: images
+        label: Images
+        type: object
+        fields:
+          - name: headshot
+            label: Hero Headshot
+            type: object
+            fields:
+              - name: src
+                label: Image
+                type: image
+                options:
+                  media: images
+                  extensions: [jpg, jpeg, png, webp]
+
+              - name: alt
+                label: Alt Text
+                type: string
+                description: Briefly describe the image for accessibility.
+
+          - name: about
+            label: About Photo
+            type: object
+            fields:
+              - name: src
+                label: Image
+                type: image
+                options:
+                  media: images
+                  extensions: [jpg, jpeg, png, webp]
+
+              - name: alt
+                label: Alt Text
+                type: string
+                description: Briefly describe the image for accessibility.
+
+          - name: og
+            label: Social Sharing Image
+            type: image
+            options:
+              media: images
+              extensions: [jpg, jpeg, png, webp]
+
+      - name: social
+        label: Social Links
+        type: object
+        fields:
+          - name: instagram
+            label: Instagram
+            type: string
+
+          - name: facebook
+            label: Facebook
+            type: string
+
+          - name: x
+            label: X
+            type: string
+
+          - name: threads
+            label: Threads
+            type: string
+
+          - name: youtube
+            label: YouTube
+            type: string
+
+          - name: tiktok
+            label: TikTok
+            type: string
+
+      - name: nav
+        label: Navigation
+        type: string
+        list: true
+        description: Header labels. Use About, Shows, Videos, and Contact so links match section ids.
+
+      - name: sections
+        label: Section Text
+        type: object
+        fields:
+          - name: hero
+            label: Hero
+            type: object
+            fields:
+              - name: eyebrow
+                label: Eyebrow
+                type: string
+
+              - name: verticalLabel
+                label: Vertical Label
+                type: string
+
+              - name: intro
+                label: Intro
+                type: text
+
+              - name: portraitCaption
+                label: Portrait Caption
+                type: string
+
+              - name: corner
+                label: Corner Label
+                type: string
+                description: "Example: 01 / 04"
+
+          - name: about
+            label: About
+            type: object
+            fields:
+              - name: marker
+                label: Side Marker
+                type: string
+
+              - name: eyebrow
+                label: Section Label
+                type: string
+
+              - name: headline
+                label: Headline
+                type: string
+                description: Use *asterisks* around words that should appear italicized. Use a newline for a line break.
+
+              - name: photoCaption
+                label: Photo Caption
+                type: string
+
+              - name: stamp
+                label: Stamp
+                type: string
+
+          - name: shows
+            label: Shows
+            type: object
+            fields:
+              - name: eyebrow
+                label: Section Label
+                type: string
+
+              - name: headline
+                label: Headline
+                type: string
+                description: Use *asterisks* around words that should appear italicized. Use a newline for a line break.
+
+              - name: note
+                label: Intro Note
+                type: text
+
+              - name: moreDates
+                label: More Dates Note
+                type: string
+                description: Short note under the show list (e.g. more dates coming soon).
+
+              - name: defaultDetail
+                label: Default Show Detail
+                type: string
+                description: Shown when a show has no additional details.
+
+              - name: ticketsLabel
+                label: Tickets Label
+                type: string
+
+          - name: videos
+            label: Videos
+            type: object
+            fields:
+              - name: eyebrow
+                label: Section Label
+                type: string
+
+              - name: headline
+                label: Headline
+                type: string
+                description: Use *asterisks* around words that should appear italicized. Use a newline for a line break.
+
+              - name: previewLabel
+                label: Preview Label
+                type: string
+
+          - name: contact
+            label: Contact
+            type: object
+            fields:
+              - name: sideLabel
+                label: Side Label
+                type: string
+
+              - name: eyebrow
+                label: Section Label
+                type: string
+
+              - name: headline
+                label: Headline
+                type: string
+                description: Use *asterisks* around words that should appear italicized. Use a newline for a line break.
+
+              - name: blurb
+                label: Intro Text
+                type: text
+
+              - name: success
+                label: Success Message
+                type: text
+
+              - name: submitLabel
+                label: Submit Button
+                type: string
+
+              - name: namePlaceholder
+                label: Name Placeholder
+                type: string
+
+              - name: emailPlaceholder
+                label: Email Placeholder
+                type: string
+
+              - name: messagePlaceholder
+                label: Message Placeholder
+                type: string
+
+  - name: bio
+    label: Bio
+    type: file
+    path: content/bio.md
+    format: raw
+    operations:
+      delete: false
+
+  - name: shows
+    label: Shows
+    type: file
+    path: content/shows.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: id
+        type: string
+        hidden: true
+
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+
+      - name: time
+        label: Time
+        type: string
+        required: true
+        description: "Example: 8:00 PM"
+
+      - name: city
+        label: City
+        type: string
+        required: true
+
+      - name: state
+        label: State
+        type: string
+        required: true
+
+      - name: venue
+        label: Venue
+        type: string
+        required: true
+
+      - name: ticketUrl
+        label: Ticket Link
+        type: string
+
+      - name: status
+        label: Status
+        type: select
+        description: Choose "No Status" to remove the tag from this show.
+        options:
+          placeholder: No Status
+          values:
+            - name: ""
+              label: No Status
+            - Just Added
+            - Low Tickets
+            - Sold Out
+
+      - name: detail
+        label: Additional Details
+        type: text
+
+  - name: videos
+    label: Videos
+    type: file
+    path: content/videos.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: featured
+        label: Featured Video
+        type: object
+        fields:
+          - name: id
+            type: string
+            hidden: true
+
+          - name: title
+            label: Title
+            type: string
+            required: true
+
+          - name: youtubeUrl
+            label: YouTube URL
+            type: string
+            required: true
+
+          - name: description
+            label: Description
+            type: text
+
+      - name: additional
+        label: Additional Videos
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: id
+            type: string
+            hidden: true
+
+          - name: title
+            label: Title
+            type: string
+            required: true
+
+          - name: youtubeUrl
+            label: YouTube URL
+            type: string
+            required: true
+
+          - name: description
+            label: Description
+            type: text
+
+settings:
+  hide: true
