@@ -65,6 +65,7 @@ export type SiteContent = {
       headline: string;
       blurb: string;
       success: string;
+      successBody: string;
       submitLabel: string;
       namePlaceholder: string;
       emailPlaceholder: string;

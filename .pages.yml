@@ -260,6 +260,10 @@ content:
                 type: text
 
               - name: success
+                label: Success Title
+                type: string
+
+              - name: successBody
                 label: Success Message
                 type: text
 

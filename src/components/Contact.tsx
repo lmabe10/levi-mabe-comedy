@@ -133,68 +133,75 @@ export function Contact() {
         <h2 id="contact-title">{renderHeadline(copy.headline)}</h2>
         <p>{copy.blurb}</p>
       </div>
-      <form className="contact-form" onSubmit={handleSubmit} noValidate>
-        <div className="contact-honeypot" aria-hidden="true">
-          <label htmlFor="website">Website</label>
-          <input
-            id="website"
-            name="website"
-            type="text"
-            tabIndex={-1}
-            autoComplete="off"
-          />
+      {status === 'success' ? (
+        <div className="contact-success" role="status" aria-live="polite">
+          <p className="contact-success-title">{copy.success}</p>
+          <p>{copy.successBody}</p>
         </div>
-        <label htmlFor="name">
-          Name
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder={copy.namePlaceholder}
-            autoComplete="name"
-            required
-            disabled={formBusy}
-          />
-        </label>
-        <label htmlFor="email">
-          Email
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder={copy.emailPlaceholder}
-            autoComplete="email"
-            required
-            disabled={formBusy}
-          />
-        </label>
-        <label className="message-field" htmlFor="message">
-          Message
-          <textarea
-            id="message"
-            name="message"
-            rows={3}
-            placeholder={copy.messagePlaceholder}
-            required
-            disabled={formBusy}
-          />
-        </label>
-        {turnstileConfigured ? (
-          <div ref={widgetRef} className="contact-turnstile" />
-        ) : (
-          <p className="contact-error" role="status">
-            Contact form is not configured yet.
-          </p>
-        )}
-        {status === 'error' && error ? (
-          <p className="contact-error" role="alert" aria-live="assertive">
-            {error}
-          </p>
-        ) : null}
-        <button className="submit-button" type="submit" disabled={formBusy}>
-          {status === 'success' ? copy.success : copy.submitLabel} <ArrowUpRight size={19} />
-        </button>
-      </form>
+      ) : (
+        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+          <div className="contact-honeypot" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+          <label htmlFor="name">
+            Name
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder={copy.namePlaceholder}
+              autoComplete="name"
+              required
+              disabled={formBusy}
+            />
+          </label>
+          <label htmlFor="email">
+            Email
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder={copy.emailPlaceholder}
+              autoComplete="email"
+              required
+              disabled={formBusy}
+            />
+          </label>
+          <label className="message-field" htmlFor="message">
+            Message
+            <textarea
+              id="message"
+              name="message"
+              rows={3}
+              placeholder={copy.messagePlaceholder}
+              required
+              disabled={formBusy}
+            />
+          </label>
+          {turnstileConfigured ? (
+            <div ref={widgetRef} className="contact-turnstile" />
+          ) : (
+            <p className="contact-error" role="status">
+              Contact form is not configured yet.
+            </p>
+          )}
+          {status === 'error' && error ? (
+            <p className="contact-error" role="alert" aria-live="assertive">
+              {error}
+            </p>
+          ) : null}
+          <button className="submit-button" type="submit" disabled={formBusy}>
+            {copy.submitLabel} <ArrowUpRight size={19} />
+          </button>
+        </form>
+      )}
     </section>
   );
 }

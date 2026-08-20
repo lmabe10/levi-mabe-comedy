@@ -132,6 +132,9 @@ h1 em, h2 em, h3 em { font-style: italic; }
 .submit-button:hover { background: var(--color-text); transform: translateY(-3px); }
 .submit-button:disabled { opacity: .7; cursor: wait; transform: none; }
 .contact-error { grid-column: 1 / -1; margin: 0; font-size: 12px; color: var(--color-accent); }
+.contact-success { align-self: center; padding: 0 11% 0 5%; }
+.contact-success-title { font-family: var(--font-display); font-size: clamp(36px, 4.2vw, 56px); line-height: .9; letter-spacing: -.045em; margin: 0 0 18px; }
+.contact-success p { margin: 0; font-size: 13px; line-height: 1.65; max-width: 280px; }
 .footer { background: var(--color-block-dark); color: var(--color-accent-contrast); min-height: 100px; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; gap: 20px; }
 .footer p { font-size: 9px; letter-spacing: .08em; margin: 0; }
 .footer .social-links { gap: 16px; }
@@ -209,6 +212,7 @@ h1 em, h2 em, h3 em { font-style: italic; }
   .contact-heading { padding: 62px 11% 35px; }
   .contact-heading h2 { font-size: 80px; }
   .contact-form { padding: 0 11% 48px; display: block; }
+  .contact-success { padding: 0 11% 48px; }
   .contact-form label { display: block; margin-bottom: 28px; }
   .message-field { margin-top: 8px; }
   .submit-button { float: right; }
