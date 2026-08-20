@@ -9,7 +9,7 @@ export function About() {
       <div className="about-marker">{copy.marker}</div>
       <div className="about-photo-block">
         <img src={site.images.about.src} alt={site.images.about.alt} />
-        <span>{copy.photoCaption}</span>
+        {copy.photoCaption ? <span>{copy.photoCaption}</span> : null}
       </div>
       <div className="about-heading">
         <p className="eyebrow">{copy.eyebrow}</p>
@@ -19,11 +19,6 @@ export function About() {
             <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}
         </div>
-      </div>
-      <div className="about-stamp">
-        {site.initials}
-        <br />
-        <span>{copy.stamp}</span>
       </div>
     </section>
   );

@@ -48,29 +48,31 @@ export function Videos() {
           {playing === featured.id && <p className="playing-label">{copy.previewLabel}</p>}
         </div>
       </div>
-      <div className="video-list">
-        {videos.additional.map((video) => {
-          const thumb = youtubeThumb(video.youtubeUrl) || site.images.about.src;
-          return (
-            <article className="supporting-video" key={video.id}>
-              <div className="supporting-image" style={{ backgroundImage: `url(${thumb})` }}>
-                <button
-                  className="small-play"
-                  onClick={() => setPlaying(playing === video.id ? null : video.id)}
-                  aria-label={`Play ${video.title}`}
-                >
-                  <Play size={16} fill="currentColor" />
-                </button>
-              </div>
-              <div className="supporting-meta">
-                <h3>{video.title}</h3>
-                <ChevronRight size={20} />
-              </div>
-              {playing === video.id && <p className="playing-label dark">{copy.previewLabel}</p>}
-            </article>
-          );
-        })}
-      </div>
+      {videos.additional.length > 0 ? (
+        <div className="video-list">
+          {videos.additional.map((video) => {
+            const thumb = youtubeThumb(video.youtubeUrl) || site.images.about.src;
+            return (
+              <article className="supporting-video" key={video.id}>
+                <div className="supporting-image" style={{ backgroundImage: `url(${thumb})` }}>
+                  <button
+                    className="small-play"
+                    onClick={() => setPlaying(playing === video.id ? null : video.id)}
+                    aria-label={`Play ${video.title}`}
+                  >
+                    <Play size={16} fill="currentColor" />
+                  </button>
+                </div>
+                <div className="supporting-meta">
+                  <h3>{video.title}</h3>
+                  <ChevronRight size={20} />
+                </div>
+                {playing === video.id && <p className="playing-label dark">{copy.previewLabel}</p>}
+              </article>
+            );
+          })}
+        </div>
+      ) : null}
     </section>
   );
 }

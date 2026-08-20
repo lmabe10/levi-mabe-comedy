@@ -7,6 +7,7 @@ declare module '*.md?raw' {
 
 interface ImportMetaEnv {
   readonly VITE_TURNSTILE_SITE_KEY?: string;
+  readonly VITE_JEFF_SHOWS_API_URL?: string;
 }
 
 interface ImportMeta {

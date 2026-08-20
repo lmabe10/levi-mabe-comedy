@@ -13,6 +13,7 @@ export default {
         border: 'var(--color-border)',
         link: 'var(--color-link)',
         tag: 'var(--color-tag)',
+        'block-dark': 'var(--color-block-dark)',
         'block-warm': 'var(--color-block-warm)',
         'block-cool': 'var(--color-block-cool)',
         'block-soft': 'var(--color-block-soft)',

@@ -1,28 +1,9 @@
 {
   "featured": {
-    "id": "video-union-hall",
-    "title": "Live from Union Hall",
-    "youtubeUrl": "https://youtu.be/UdAXs_dcKvI?si=eFMd0J7CnlguUIlE",
-    "description": "Featured performance"
+    "id": "video-loony-bin-wichita",
+    "title": "Levi Mabe | Stand-up Comedy - Loony Bin Wichita",
+    "youtubeUrl": "https://youtu.be/Ispxjwh3vvY",
+    "description": "Stand-up"
   },
-  "additional": [
-    {
-      "id": "video-first-five",
-      "title": "The first five minutes",
-      "youtubeUrl": "https://youtu.be/xXCfINtfuTk?si=CTcrTqaAZ-a9h__p",
-      "description": "Stand-up"
-    },
-    {
-      "id": "video-short-conversation",
-      "title": "A very short conversation",
-      "youtubeUrl": "https://youtu.be/OxmiSRD0ZqU?si=VfWfU-q95RV2ZSSZ",
-      "description": "Interview"
-    },
-    {
-      "id": "video-club-set",
-      "title": "Club set highlight",
-      "youtubeUrl": "https://youtu.be/i-cyy8AY4RM?si=aT1vuUIGSM36hP_9",
-      "description": "Stand-up"
-    }
-  ]
+  "additional": []
 }

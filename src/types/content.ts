@@ -27,6 +27,8 @@ export type SiteContent = {
     headshot: SiteImage;
     about: SiteImage;
     og: string;
+    logoColor: string;
+    logoCream: string;
   };
   social: Partial<Record<SocialPlatform, string>>;
   nav: string[];
@@ -43,7 +45,6 @@ export type SiteContent = {
       eyebrow: string;
       headline: string;
       photoCaption: string;
-      stamp: string;
     };
     shows: {
       eyebrow: string;
@@ -79,9 +80,10 @@ export type Show = {
   city: string;
   state: string;
   venue: string;
-  detail?: string;
   status?: string;
+  detail?: string;
   ticketUrl?: string;
+  soldOut?: boolean;
 };
 
 export type Video = {

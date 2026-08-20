@@ -7,8 +7,8 @@ export function Header() {
 
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label={`${site.name} home`}>
-        <span>{site.initials}</span> {site.name}
+      <a className="site-logo" href="#top" aria-label={`${site.name} home`}>
+        <img src={site.images.logoColor} alt="" />
       </a>
       <button
         className="menu-button"

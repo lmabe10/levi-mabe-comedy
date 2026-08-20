@@ -1,9 +1,7 @@
 import siteJson from '../../content/site.json';
-import showsJson from '../../content/shows.json';
 import videosJson from '../../content/videos.json';
 import bioRaw from '../../content/bio.md?raw';
 import type {
-  Show,
   SiteContent,
   SocialPlatform,
   VideosContent,
@@ -16,10 +14,6 @@ export const bio: string[] = bioRaw
   .split(/\n\s*\n/)
   .map((p) => p.replace(/\n/g, ' ').trim())
   .filter(Boolean);
-
-export const shows: Show[] = [...(showsJson as Show[])].sort((a, b) =>
-  a.date.localeCompare(b.date)
-);
 
 export const videos = videosJson as VideosContent;
 
@@ -55,38 +49,7 @@ export function getSocialLinks(social: SiteContent['social']): SocialLink[] {
   });
 }
 
-/** Parse ISO date (YYYY-MM-DD) at noon UTC to avoid timezone day shifts. */
-function parseIsoDate(isoDate: string): Date | null {
-  const [year, month, day] = isoDate.split('-').map(Number);
-  if (!year || !month || !day) return null;
-  return new Date(Date.UTC(year, month - 1, day, 12));
-}
-
-export function getDayOfWeek(isoDate: string, style: 'short' | 'long' = 'short'): string {
-  const date = parseIsoDate(isoDate);
-  if (!date) return '';
-  return new Intl.DateTimeFormat('en-US', {
-    weekday: style,
-    timeZone: 'UTC',
-  }).format(date);
-}
-
-export function getDateDay(isoDate: string): string {
-  const date = parseIsoDate(isoDate);
-  if (!date) return '';
-  return String(date.getUTCDate()).padStart(2, '0');
-}
-
-export function getDateMonth(isoDate: string): string {
-  const date = parseIsoDate(isoDate);
-  if (!date) return '';
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    timeZone: 'UTC',
-  })
-    .format(date)
-    .toUpperCase();
-}
+export { getDateDay, getDateMonth, getDayOfWeek, parseLocalDate } from '@/lib/dates';
 
 /** Split hero corner text like "01 / 04" for styled slash. */
 export function splitCorner(corner: string): { before: string; after: string } | null {

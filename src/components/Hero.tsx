@@ -8,9 +8,9 @@ export function Hero() {
 
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-coral" />
-      <div className="hero-apricot" />
-      <div className="hero-teal" />
+      <div className="hero-warm" />
+      <div className="hero-soft" />
+      <div className="hero-cool" />
       <div className="hero-vertical-label">
         {labelMain}
         {labelRest ? (

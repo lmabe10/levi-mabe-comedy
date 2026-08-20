@@ -4,8 +4,8 @@ import { SocialLinks } from '@/components/SocialLinks';
 export function Footer() {
   return (
     <footer className="footer">
-      <a className="wordmark" href="#top">
-        <span>{site.initials}</span> {site.name}
+      <a className="site-logo" href="#top" aria-label={`${site.name} home`}>
+        <img src={site.images.logoCream} alt="" />
       </a>
       <p>
         © {site.copyrightYear} {site.name}. All rights reserved.

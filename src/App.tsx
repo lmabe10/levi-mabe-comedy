@@ -30,6 +30,7 @@ function App() {
 
   return (
     <div className="site-shell">
+      <div className="paper-grain paper-grain-screen" aria-hidden="true" />
       <Header />
       <main id="top">
         <Hero />
